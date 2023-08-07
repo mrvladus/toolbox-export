@@ -1,5 +1,5 @@
 # toolbox-export
-Script for exporting application's from toolbox or any other containers.
+Script for exporting applications from toolbox or any other containers.
 
 It's exporting .desktop files to `~/.local/share/applicatios` and app icons to `~/.local/share/icons`
 
