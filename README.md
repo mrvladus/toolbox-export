@@ -12,14 +12,14 @@ curl https://raw.githubusercontent.com/mrvladus/toolbox-export/main/toolbox-expo
 ## Usage
 
 Enter the container. For toolbox run:
-```
+```bash
 toolbox enter
 ```
 Run command:
-```
+```bash
 toolbox-export APP
 ```
 For exapmple, if you want to export VSCode run:
-```
+```bash
 toolbox-export code
 ```
