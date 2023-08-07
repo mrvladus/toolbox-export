@@ -5,7 +5,7 @@ It's exporting .desktop files to `~/.local/share/applicatios` and app icons to `
 
 ## Install
 ```bash
-wget https://raw.githubusercontent.com/mrvladus/toolbox-export/main/toolbox-export.py -O ~/.local/bin/toolbox-export
+curl https://raw.githubusercontent.com/mrvladus/toolbox-export/main/toolbox-export.py --create-dirs -o ~/.local/bin/toolbox-export
 ```
 
 ## Usage
