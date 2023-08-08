@@ -10,8 +10,8 @@ def check_args() -> None:
 
 
 def check_container() -> None:
-    if not os.path.exists("/run/.containerenv") or os.path.exists("/.dockerenv"):
-        error("Not running from container")
+    if not os.path.exists("/run/.containerenv"):
+        error("Not running from toolbox")
 
 
 def error(msg: str) -> None:
@@ -65,7 +65,14 @@ def export() -> None:
                     if not icon_name in icon_names:
                         icon_names.append(icon_name)
                 if line.startswith("Exec=") and sys.argv[1] in line:
-                    text += line.replace("Exec=", "Exec=/usr/bin/toolbox run ")
+                    with open("/run/.containerenv") as c:
+                        for l in c.readlines():
+                            if l.startswith("name"):
+                                name = l.split("=")[1].strip().replace('"', "")
+                                break
+                    text += line.replace(
+                        "Exec=", f"Exec=/usr/bin/toolbox run -c {name} "
+                    )
                 elif line.startswith("Name="):
                     text += line.replace("\n", " (toolbox)\n")
                 else:
