@@ -92,9 +92,10 @@ def export() -> None:
             files.extend(
                 glob.glob(f"/usr/share/pixmaps/**/{icon_name}.*", recursive=True)
             )
+            icon_dir: str = os.path.expanduser("~") + "/.local/share/icons"
             for file in files:
                 if file.endswith("png") or file.endswith("svg"):
-                    file_name = desktop_dir + "/" + file.split("/")[-1]
+                    file_name = icon_dir + "/" + file.split("/")[-1]
                     shutil.copy(file, file_name)
                     info(f"Exported icon: {file_name}")
 
