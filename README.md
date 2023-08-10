@@ -1,5 +1,5 @@
 # toolbox-export
-Script for exporting applications from toolbox or any other containers.
+Script for exporting applications from toolbox.
 
 It's exporting .desktop files to `~/.local/share/applicatios` and app icons to `~/.local/share/icons`
 
@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/mrvladus/toolbox-export/main/toolbox-expo
 
 ## Usage
 
-Enter the container. For toolbox run:
+Enter the toolbox:
 ```bash
 toolbox enter
 ```
