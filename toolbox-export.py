@@ -42,7 +42,10 @@ def get_desktop_files() -> list[str]:
             lines: list[str] = f.readlines()
             for line in lines:
                 if line.startswith("Exec=") and sys.argv[1] in line:
-                    if sys.argv[1] == line.split(" ")[0].split("/")[-1]:
+                    if (
+                        sys.argv[1]
+                        == line.strip().strip("Exec=").split(" ")[0].split("/")[-1]
+                    ):
                         matched_files.append(app)
                         break
     if matched_files == []:
