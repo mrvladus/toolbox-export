@@ -19,7 +19,7 @@ Run command:
 ```bash
 toolbox-export APP
 ```
-For exapmple, if you want to export VSCode run:
+For example, if you want to export VSCode run:
 ```bash
 toolbox-export code
 ```
